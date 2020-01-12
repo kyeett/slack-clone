@@ -1,0 +1,140 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+    crossorigin="anonymous"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <title>Shack</title>
+  <script src="scripts.js"></script>
+  <style>
+    .search-close,
+    .search-icon {
+      margin: 0 6px 0 12px;
+      padding: 10px;
+      position: absolute;
+    }
+
+    .search-close {
+      right: 0px;
+      cursor: hand;
+    }
+
+    .search_results {
+      border-top: 1px solid lightgray;
+      display: none;
+    }
+    .search_results > label {
+      padding: 20px 16px 0px 28px;
+      font-size: 12px;
+      color: gray;
+    }
+    .search_results > ul > li {
+      border: 0px;
+      padding-left: 28px;
+      border-radius: 0;
+    }
+    .search_results > ul > li:hover {
+      background-color: cornflowerblue;
+      color: white;
+      cursor: hand;
+    }
+
+    /* Remove rounding of list */
+    .list-group-item:first-child {
+      border-top-left-radius: 0rem;
+      border-top-right-radius: 0rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Modal -->
+  <div
+    class="modal"
+    id="search_modal"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <!-- Search icon -->
+        <i class="fa fa-search search-icon" aria-hidden="true"></i>
+
+        <!-- Close search modal button -->
+        <i
+          class="fa fa-times search-close"
+          data-dismiss="modal"
+          aria-hidden="true"
+        ></i>
+
+        <!-- Search input -->
+        <input
+          type="text"
+          class="form-control pl-5 border-0"
+          id="search_input"
+          name="123e4567-e89b-12d3-a456-42665544000"
+          placeholder="Search discussions and channels"
+        />
+
+        <!-- Dummy search results -->
+        <div class="search_results">
+          <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+    <section class="jumbotron text-center mt">
+      <div class="container">
+        <h1 class="jumbotron-heading">Slack-like Search Bar</h1>
+        <p class="lead text-muted">
+          A simple implementation of a search bar, similar to the one used by
+          Slack. Uses jQuery events and Bootstrap modals.
+        </p>
+        <p>
+          <button
+            id="demo_button"
+            autofocus="true"
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#search_modal"
+          >
+            Launch demo modal
+          </button>
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
